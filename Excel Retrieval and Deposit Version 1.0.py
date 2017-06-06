@@ -1,24 +1,8 @@
-try:
-    # for Python2
-    from Tkinter import *   ## notice capitalized T in Tkinter 
-except ImportError:
-    # for Python3
-    from tkinter import *   ## notice lowercase 't' in tkinter here
-
 import os
 import subprocess
 import openpyxl
 import tkinter
 from tkinter import filedialog
-
-#OPTIONS = [
-#    ]
-
-#root = Tk()
-
-#var1 = tkinter.StringVar()
-#drop = tkinter.OptionMenu(root,var1,*OPTIONS)
-#drop.grid()
 
 Tk().withdraw # we don't want a full GUI, so keep the root window from appearing
 
@@ -29,8 +13,6 @@ therapy_dashboard = openpyxl.load_workbook('G:\Therapy Record Interfaces\Front R
 therapy_sheet = therapy_dashboard.get_sheet_names()[0]
 
 os.chdir(filedirectory)
-
-# excel_document = openpyxl.load_workbook(filename)
 
 def main():
     for filename in os.listdir(filedirectory):
@@ -111,19 +93,3 @@ def main():
     #raise KeyError(filename, named_range, 'not found')
 
 main()
-
-#print(excel_document.get_sheet_names())
-
-#sheet = excel_document.get_sheet_by_name('Sheet1')
-#print(sheet.cell(row = 5, column = 2).value)
-
-#multiple_cells = sheet['A1':'B3']
-#for row in multiple_cells:
-#    for cell in row:
-#        print(cell.value)
-
-#all_rows = sheet.rows
-#print(all_rows)
-
-#all_columns = sheet.columns
-#print(all_columns)
